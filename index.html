@@ -6,10 +6,74 @@
     <script src="js/scripts.js" charset="utf-8"></script>
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css"  type="text/css">
-
-    <title></title>
+    <title>Movie Tickets</title>
   </head>
   <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Movie Tickets</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <!-- movietime? (name of movie), age(child, senior, military, adult, student), time, number of tix -->
+          <label for="movie">Select your movie</label>
+          <select name="movie">
+            <option value="blank"></option>
+            <option value="ghost">Ghost in a Shell</option>
+            <option value="logan">Logan</option>
+            <option value="beauty">Beauty and the Beast</option>
+            <option value="power">Power Rangers: the Movie</option>
+            <option value="life">Life</option>
+          </select>
+          </br>
+          <label for="movie-type">Select your Movie Type</label>
+          <select name="movie-type">
+            <option value="blank"></option>
+            <option value="standard">Standard</option>
+            <option value="3d">3-D</option>
+          </select>
+          </br>
+          <label for="ticket-type">Select your Ticket Type</label>
+          <select name="ticket-type">
+            <option value="blank"></option>
+            <option value="adult">Adult</option>
+            <option value="child">Child Under 11</option>
+            <option value="senior">Senior</option>
+            <option value="military">Military</option>
+            <option value="student">Student (ID REQUIRED)</option>
+          </select>
+          </br>
+          <label for="ticket-time">Select your Ticket Time</label>
+          <select name="ticket-time">
+            <option value="blank"></option>
+            <option value="matinee">11:50am</option>
+            <option value="matinee">12:20pm</option>
+            <option value="night">3:30pm</option>
+            <option value="night">8:00pm</option>
+            <option value="night">9:50pm</option>
+          </select>
+          </br>
+          <label for="quantity">How many tickets?</label>
+          <input type="number" name="quantity" value="1">
+          </br>
+          <button type="submit" id="submit" class="btn btn-success">Complete Your Order</button>
+          <button type="button" id="addMovies" class="btn btn-primary">Add Another Ticket</button>
+        </div>
+        <div class="col-md-6" id="result">
+          <div class="row">
+            <div class="movie-result col-xs-8">
+              <!-- //movie name, type, ticket type, time, quantity, cost -->
+              <h3></h3>
+              <ul></ul>
+            </div>
+            <div class="col-xs-4 subtotal">
+              <h4></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
   </body>
 </html>
