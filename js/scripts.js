@@ -6,29 +6,29 @@ function Movie(name, movieType, ticketType, time, quantity){
   this.quantity = quantity;
 }
 
-var Currentmovies = {
-  ghost: "Ghost in a Shell",
-  logan: "Logan",
-  beauty: "Beauty and the Beast",
-  power: "Power Rangers: the Movie",
-  life: "Life",
-};
-
 function resetFields() {
   $("option[value=blank]").attr("selected", "selected");
   $("input[name=quantity]").val('1');
 }
 
 $(function(){
-  $("#submit").click(function() {
-    var inputtedMovieName = $("select[name=movie]").val();
-    var inputtedMovieType = $("select[name=movie-type]").val();
-    var inputtedTicketType = $("select[name=ticket-type]").val();
-    var inputtedMovieTime = $("select[name=ticket-time]").val();
-    var inputtedMovieQuantity = $("input[name=quantity]").val();
+  $("#addMovies").click(function() {
+    var inputtedMovieName = $("select[name=movie] option:selected").text();
+    var inputtedMovieType = $("select[name=movie-type] option:selected").text();
+    var inputtedTicketType = $("select[name=ticket-type] option:selected").text();
+    var inputtedMovieTime = $("select[name=ticket-time] option:selected").text();
+    var inputtedMovieQuantity = parseInt($("input[name=quantity]").val());
     var newMovie = new Movie(inputtedMovieName, inputtedMovieType, inputtedTicketType, inputtedMovieTime, inputtedMovieQuantity);
-    console.log(newMovie);
+
+    $(".movie-result h3").text(inputtedMovieName);
+    $(".movie-result ul").append(`<li>${inputtedMovieType}</li>`);
+    $(".movie-result ul").append(`<li>${inputtedTicketType}</li>`);
+    $(".movie-result ul").append(`<li>${inputtedMovieTime}</li>`);
+    $(".movie-result ul").append(`<li>Quantity: ${inputtedMovieQuantity}</li>`);
+
     resetFields();
+
+
 
   });
 
